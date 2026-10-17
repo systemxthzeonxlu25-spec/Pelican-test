@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e9ece4">
+  <title>Special Delivery — a pelican on a bicycle</title>
+  <style>
+    :root { color-scheme: light; --ink: #273c36; --paper: #fff9ea; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 36px 26px 24px; background: #e9ece4; color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
+    .page { max-width: 1120px; margin: auto; }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 22px; }
+    .brand { font-size: 15px; font-weight: 900; letter-spacing: -.4px; }
+    .brand span { display: inline-grid; place-items: center; width: 27px; height: 27px; margin-right: 9px; border: 1.5px solid; border-radius: 50%; font-family: Georgia, serif; font-size: 19px; }
+    .edition { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; }
+    main { overflow: hidden; border: 1px solid #273c3638; border-radius: 5px; background: var(--paper); box-shadow: 0 15px 40px #263c3610; }
+    .artwork { display: block; width: 100%; height: auto; }
+    footer { display: flex; justify-content: space-between; gap: 18px; padding-top: 19px; font-size: 11px; line-height: 1.7; }
+    footer p { margin: 0; }
+    .credit { text-align: right; opacity: .65; }
+    .spokes { animation: spin 2.5s linear infinite; }
+    .rear-spokes { transform-origin: 350px 610px; }
+    .front-spokes { transform-origin: 774px 610px; }
+    .bell { animation: bell 5s ease-in-out infinite; transform-origin: 744px 380px; }
+    .flight { animation: drift 6s ease-in-out infinite; }
+    .flight.two { animation-delay: -2s; }
+    .speed-line { animation: breeze 1.7s ease-in-out infinite; }
+    .speed-line.delayed { animation-delay: -.8s; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes bell { 0%, 84%, 100% { transform: rotate(0); } 88%, 94% { transform: rotate(7deg); } 91%, 97% { transform: rotate(-7deg); } }
+    @keyframes drift { 50% { transform: translate(12px, -5px); } }
+    @keyframes breeze { 50% { opacity: .3; transform: translateX(-14px); } }
+    @media (prefers-reduced-motion: reduce) { .spokes, .bell, .flight, .speed-line { animation: none; } }
+    @media (max-width: 600px) { body { padding: 18px 12px; } header { margin-bottom: 14px; } .edition { font-size: 8px; letter-spacing: 1px; } footer { font-size: 9px; } .brand { font-size: 12px; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand"><span aria-hidden="true">f</span>FEATHER &amp; CO.</div>
+      <div class="edition">Small adventures / No. 006</div>
+    </header>
+    <main>
+      <svg class="artwork" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 840" role="img" aria-labelledby="art-title art-desc">
+        <title id="art-title">Special Delivery</title>
+        <desc id="art-desc">A white pelican with a long golden bill pedals a turquoise bicycle through a sunny pastel town. A little parcel rides on the rear rack. Its webbed feet follow the pedals as the wheels turn.</desc>
+        <defs>
+          <pattern id="paper" width="23" height="19" patternUnits="userSpaceOnUse">
+            <circle cx="3" cy="5" r=".65" fill="#9e8164" opacity=".14"/>
+            <circle cx="17" cy="14" r=".45" fill="#9e8164" opacity=".12"/>
+          </pattern>
+          <pattern id="brick" width="42" height="30" patternUnits="userSpaceOnUse">
+            <path d="M0 0H42M21 0V15M0 15H42M0 15V30M42 15V30" fill="none" stroke="#bc7869" stroke-width="1" opacity=".25"/>
+          </pattern>
+          <path id="spoke" d="M0-92V92M-92 0H92M-65-65L65 65M-65 65L65-65M-35-85L35 85M-85 35L85-35M-85-35L85 35M-35 85L35-85"/>
+        </defs>
+
+        <!-- An original little print poster, drawn entirely in SVG. -->
+        <path fill="#fff9ea" d="M0 0h1200v840H0z"/>
+        <circle cx="879" cy="235" r="153" fill="#f6c454"/>
+        <circle cx="879" cy="235" r="139" fill="none" stroke="#fff9ea" stroke-width="1" opacity=".45"/>
+        <path d="M819 154h75m26 0h39M971 293h64" stroke="#fff0bd" stroke-width="3" stroke-linecap="round"/>
+        <g fill="#273c36" font-family="Arial, Helvetica, sans-serif">
+          <text x="58" y="68" font-size="11" letter-spacing="3.7">THE NEIGHBOURHOOD EXPRESS</text>
+          <text x="53" y="160" font-size="100" font-weight="900" letter-spacing="-6">SPECIAL</text>
+          <text x="53" y="248" font-size="100" font-weight="900" letter-spacing="-6">DELIVERY.</text>
+          <text x="60" y="284" font-size="11" font-weight="700" letter-spacing="2.1">A LITTLE WIND. A LOT OF WING.</text>
+        </g>
+        <g stroke="#273c36" stroke-width="2.5" fill="none" stroke-linecap="round">
+          <path class="flight" d="M1060 137q12-14 24 0q12-14 24 0"/>
+          <path class="flight two" d="M1015 178q8-10 16 0q8-10 16 0"/>
+        </g>
+        <g fill="#fff9ea">
+          <path d="M947 358h185c-3-18-20-24-34-17-8-29-46-32-60-10-14-12-33-4-36 10-24-9-45-1-55 17z"/>
+          <path d="M628 119h104c-5-12-16-17-28-13-9-20-34-20-43-1-18-6-29 1-33 14z"/>
+        </g>
+
+        <!-- Houses and a very small corner shop. -->
+        <path d="M0 495Q225 465 400 505T800 492T1200 482V655H0Z" fill="#d6dfbd"/>
+        <g stroke="#9c8e72" stroke-width="2" stroke-linejoin="round">
+          <path d="M-19 524V397l104-69 100 69v127" fill="#e9ad98"/>
+          <path d="M-31 400L84 321l115 78" fill="none" stroke="#bd7867" stroke-width="10"/>
+          <path d="M-18 405h202v120H-18z" fill="url(#brick)" stroke="none"/>
+          <path d="M63 524v-71q0-27 23-27t23 27v71" fill="#4b7666"/>
+          <path d="M40 373h27v31H40zm64 0h27v31h-27z" fill="#fff1cb"/>
+          <path d="M53 373v31m64-31v31"/>
+          <path d="M194 525V419h106v106" fill="#efd99e"/>
+          <path d="M183 419h128" fill="none" stroke="#d6b76d" stroke-width="9"/>
+          <path d="M214 445h65v43h-65z" fill="#678c79"/>
+          <path d="M246 446v42" stroke="#efe2b6"/>
+          <path d="M974 532V407h153v125" fill="#e9b7b7"/>
+          <path d="M989 407v-19h123v19" fill="#d99b9d"/>
+          <path d="M996 533v-63h34v63m16-63h59v41h-59z" fill="#577b72"/>
+          <path d="M985 432h131l10 29H975z" fill="#fff5dd"/>
+          <path d="M1000 432l-6 29m31-29-3 29m30-29v29m26-29 3 29m21-29 6 29" stroke="#cf7971" stroke-width="13"/>
+        </g>
+        <text x="1051" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" letter-spacing="2" fill="#714d4f">POST &amp; PAPER</text>
+        <g stroke="#567663" stroke-width="3" stroke-linecap="round" fill="#8aa777">
+          <path d="M1139 544V424m0 58q-36-2-33-30 28-1 33 30m0-13q29-9 29-36-30 5-29 36m0-22q-27-18-19-37 24 10 19 37"/>
+          <path d="M209 534v-33m0 15q-19-1-21-15 20-4 21 15m0-8q17-6 17-18-18 1-17 18"/>
+        </g>
+        <path d="M0 547Q260 529 459 547T847 546T1200 537V840H0Z" fill="#eed6c8"/>
+        <path d="M0 675Q280 650 547 683T1200 660" fill="none" stroke="#fff2dd" stroke-width="4"/>
+        <path d="M75 724h62m35 0h15m739-9h109m21 0h25" stroke="#c49d88" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="561" cy="724" rx="348" ry="16" fill="#a2836c" opacity=".14"/>
+
+        <!-- Bicycle: tires, rims and independently rotating spokes. -->
+        <g fill="#fff9ea" stroke="#273c36">
+          <circle cx="350" cy="610" r="108" stroke-width="13"/>
+          <circle cx="774" cy="610" r="108" stroke-width="13"/>
+          <circle cx="350" cy="610" r="97" fill="#f5e5cc" stroke="#97a79a" stroke-width="2"/>
+          <circle cx="774" cy="610" r="97" fill="#f5e5cc" stroke="#97a79a" stroke-width="2"/>
+        </g>
+        <g stroke="#a1a99b" stroke-width="1.7" fill="none">
+          <g class="spokes rear-spokes"><use href="#spoke" x="350" y="610"/><path d="M350 524v15" stroke="#d87853" stroke-width="5"/></g>
+          <g class="spokes front-spokes"><use href="#spoke" x="774" y="610"/><path d="M774 524v15" stroke="#d87853" stroke-width="5"/></g>
+        </g>
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M239 593a113 113 0 0 1 217-27M666 578a114 114 0 0 1 219 16" stroke="#273c36" stroke-width="9"/>
+          <path d="M239 593a113 113 0 0 1 217-27M666 578a114 114 0 0 1 219 16" stroke="#e6a347" stroke-width="5"/>
+          <path d="M274 484h144m-128 2 60 124m56-124-56 124" stroke="#273c36" stroke-width="5"/>
+        </g>
+
+        <!-- The parcel is on the rack, safely away from the spokes. -->
+        <g transform="rotate(-4 349 466)" stroke="#674e36" stroke-width="2.5" stroke-linejoin="round">
+          <path d="M291 429h105v49H291z" fill="#c9935b"/>
+          <path d="M291 429l18-17h101l-14 17z" fill="#e8bc7d"/>
+          <path d="M396 429l14-17v47l-14 19z" fill="#ad774d"/>
+          <path d="M339 429v49m0-49 17-17M291 452h105l14-16" fill="none" stroke="#fff0c4" stroke-width="4"/>
+          <path d="M348 428q-28-29-26-8 2 12 26 8 26-25 26-8-1 13-26 8" fill="none" stroke="#f8dfab" stroke-width="2.5"/>
+          <path d="M366 440h19v14h-19z" fill="#fff5dd" stroke-width="1"/>
+          <path d="M370 445h11m-11 4h8" stroke-width="1"/>
+        </g>
+
+        <!-- Far foot and leg, behind the frame. -->
+        <path id="far-leg" d="M514 435Q571 504 504 626" fill="none" stroke="#815e36" stroke-width="15" stroke-linecap="round"/>
+        <path id="far-leg-light" d="M514 435Q571 504 504 626" fill="none" stroke="#c28a46" stroke-width="9" stroke-linecap="round"/>
+        <g id="far-foot" transform="translate(504 626)"><path d="M-7-10 6-7 27 4 18 10-14 4Z" fill="#c28a46" stroke="#815e36" stroke-width="2.5"/></g>
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M350 610 481 452 540 600 350 610M481 452 704 452 540 600M704 452l70 158" stroke="#273c36" stroke-width="14"/>
+          <path d="M350 610 481 452 540 600 350 610M481 452 704 452 540 600M704 452l70 158" stroke="#4f9f94" stroke-width="9"/>
+          <path d="m495 457 196 0m18 5 60 137" stroke="#9dd0b6" stroke-width="2"/>
+          <path d="m481 452-10-30m233 30-16-52 18-17h49" stroke="#273c36" stroke-width="8"/>
+          <path d="M708 383h47" stroke="#c8925c" stroke-width="12"/>
+          <path d="M710 391q34 59 15 103" stroke="#273c36" stroke-width="2.5"/>
+          <path d="M348 600 537 574q42-2 43 27t-43 30l-189-11q-12-10 0-20" stroke="#273c36" stroke-width="4"/>
+          <path d="M348 604 537 580q34-2 35 21t-35 24l-189-9" stroke="#b2b6a4" stroke-width="2"/>
+        </g>
+        <path d="M445 416q5-9 29-7l27 3q11 1 10 9-25 8-59 5-8-1-7-10z" fill="#754e39" stroke="#273c36" stroke-width="3"/>
+        <g fill="#e8b664" stroke="#273c36" stroke-width="3">
+          <circle cx="350" cy="610" r="7"/><circle cx="774" cy="610" r="7"/>
+          <circle cx="540" cy="600" r="27" fill="#c5cead"/>
+          <circle cx="540" cy="600" r="18" fill="#416c5e"/>
+        </g>
+        <g class="bell" stroke="#273c36" stroke-width="2.5" fill="#e6ac46">
+          <path d="M734 380q0-18 11-18t11 18z"/><path d="M732 381h26"/><circle cx="745" cy="361" r="2"/>
+        </g>
+        <g id="crank" transform="rotate(-25 540 600)" stroke="#273c36" stroke-linecap="round">
+          <path d="M500 600h80" stroke-width="7"/>
+          <circle cx="540" cy="600" r="5" fill="#f1dcaf" stroke-width="2"/>
+        </g>
+        <path id="far-pedal" d="M489 627h29" stroke="#273c36" stroke-width="7" stroke-linecap="round"/>
+
+        <!-- Near leg is attached above the saddle, with a proper webbed foot. -->
+        <path id="near-leg-outline" d="M495 424Q472 502 576 583" fill="none" stroke="#815e36" stroke-width="17" stroke-linecap="round"/>
+        <path id="near-leg" d="M495 424Q472 502 576 583" fill="none" stroke="#e6ae51" stroke-width="11" stroke-linecap="round"/>
+        <path id="near-pedal" d="M562 589h31" stroke="#273c36" stroke-width="7" stroke-linecap="round"/>
+        <g id="near-foot" transform="translate(576 583)">
+          <path d="m-7-11 12 1 9 9 17 6-8 7L-13 5Z" fill="#e6ae51" stroke="#815e36" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="m2 0 10 8M9 0l12 7" fill="none" stroke="#b27c3b" stroke-width="1.5"/>
+        </g>
+
+        <!-- Pelican silhouette: stout body, curved neck, huge bill and pouch. -->
+        <g stroke="#273c36" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M461 369q-42 9-78-37l49 13-25-30 67 34" fill="#fffdf1"/>
+          <path d="M432 348q-3-45 51-50 53-6 89 32 28 27 37 12 13-22 14-62-14-18-7-42 9-31 44-34 40-5 53 25 13 31-15 49-8 8-9 26-3 65-47 95-34 24-76 36-49 16-90-9-39-24-44-78z" fill="#fffdf1"/>
+          <path d="M655 286q6 73-44 103-32 22-80 30 63 5 111-20 44-30 47-95 1-18 9-26" fill="#d8ddc6" stroke="none"/>
+          <path d="M455 349q9-25 39-24 36-2 59 35-44 10-72-4 15 15 38 18-41 9-64-25z" fill="#e9e9d6" stroke-width="2.5"/>
+          <path d="M450 386q18 18 44 17m-37-6q16 15 37 16" fill="none" stroke="#bdc9b5" stroke-width="2"/>
+          <path d="M667 261q37-5 69 9l148 18q-68 72-130 51-40-13-58-50z" fill="#eab350"/>
+          <path d="M704 281q12 34 51 47 57 18 108-34" fill="none" stroke="#c98c38" stroke-width="2"/>
+          <path d="M669 254q26-4 52 1l170 34q-64 6-121-3l-99-14q-9-9-2-18z" fill="#f2c760"/>
+          <path d="m710 266 150 22" fill="none" stroke="#fff0b8" stroke-width="2"/>
+          <path d="M887 286q13 3 5 11l-7-4" fill="#ad7140" stroke-width="2"/>
+          <circle cx="661" cy="241" r="10" fill="#f2cb73" stroke-width="2"/>
+          <circle cx="663" cy="241" r="4" fill="#273c36" stroke="none"/>
+          <circle cx="664" cy="239" r="1.5" fill="#fffdf1" stroke="none"/>
+          <path d="M648 224q8-5 16-2" fill="none" stroke-width="2.5"/>
+        </g>
+
+        <!-- Work cap, messenger bag and a wing resting on the handlebar. -->
+        <g stroke="#273c36" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M616 223q-9-29 21-40 22-8 43 9l2 18z" fill="#4a7064" stroke-width="3"/>
+          <path d="M612 219q30-17 74-13l25 10q-36 10-65 5l-32 8z" fill="#273c36" stroke-width="3"/>
+          <path d="m626 200 7 12m8-17 7 12" stroke="#82a092" stroke-width="2"/>
+          <path d="m490 310-47 69" fill="none" stroke="#744f3a" stroke-width="13"/>
+          <path d="m490 310-47 69" fill="none" stroke="#c48b58" stroke-width="7"/>
+          <path d="m422 366 46-5 6 43q-16 17-49 5z" fill="#c88650" stroke-width="3"/>
+          <path d="m422 366 46-5-5 24-19 10-21-13z" fill="#dda66e" stroke-width="2.5"/>
+          <path d="m442 383 9-1 1 10-9 1z" fill="#eec870" stroke-width="2"/>
+          <path d="M537 336q31 13 59 29l54 13 57 12q16 2 19 10-15 8-29 2-10 7-23 0-38 2-69-11-51-9-71-31" fill="#fffdf1" stroke-width="3.5"/>
+          <path d="M600 379q36 13 69 14m12 0 17 5m1-7 14 5" fill="none" stroke="#bcc8b3" stroke-width="2"/>
+        </g>
+
+        <g class="speed-line" fill="none" stroke="#b49271" stroke-width="3" stroke-linecap="round">
+          <path d="M175 571h35m-52 14h28m10-31h26"/>
+        </g>
+        <g class="speed-line delayed" fill="none" stroke="#b49271" stroke-width="2" stroke-linecap="round">
+          <path d="M922 604h49m-31 16h19"/>
+        </g>
+        <g transform="translate(1027 638) rotate(12)" fill="none" stroke="#8a6855">
+          <circle r="47" stroke-width="1.5"/><circle r="40" stroke-width=".8"/>
+          <path d="m-18 2 12 12 26-28" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <g fill="#8a6855" stroke="none" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" letter-spacing="1.8">
+            <text y="-24">WING POWERED</text><text y="31">EST. TODAY</text>
+          </g>
+        </g>
+        <path d="M59 765h1082" stroke="#b6a48e" stroke-width="1"/>
+        <g fill="#655e4c" font-family="Arial, Helvetica, sans-serif">
+          <text x="60" y="797" font-size="11" letter-spacing="1.7">YOUR PARCEL. OUR PELICAN.</text>
+          <text x="1140" y="797" text-anchor="end" font-size="10" letter-spacing="1.4">NO FUEL. JUST FISH. →</text>
+        </g>
+        <path fill="url(#paper)" d="M0 0h1200v840H0z" pointer-events="none"/>
+      </svg>
+    </main>
+    <footer>
+      <p>“Generate an SVG of a pelican riding a bicycle”<br>One prompt. One small adventure.</p>
+      <p class="credit">Drawn in SVG · GPT-6<br>18 October 2026</p>
+    </footer>
+  </div>
+  <script>
+    (() => {
+      const motion = matchMedia('(prefers-reduced-motion: reduce)');
+      const byId = id => document.getElementById(id);
+      const leg = byId('near-leg');
+      const outline = byId('near-leg-outline');
+      const far = byId('far-leg');
+      const farLight = byId('far-leg-light');
+      const nearFoot = byId('near-foot');
+      const farFoot = byId('far-foot');
+      const nearPedal = byId('near-pedal');
+      const farPedal = byId('far-pedal');
+      const crank = byId('crank');
+      let frame = 0;
+      let previous = null;
+      let phase = -Math.PI / 7;
+      const n = value => value.toFixed(2);
+
+      // A deliberately simple, illustrative leg bend: both feet stay on
+      // opposite ends of the same crank, with the knees bending forward.
+      function draw() {
+        const x = 540 + Math.cos(phase) * 40;
+        const y = 600 + Math.sin(phase) * 40;
+        const fx = 1080 - x;
+        const fy = 1200 - y;
+        const nearPath = `M495 424 Q${n(x + 15)} 478 ${n(x)} ${n(y - 8)}`;
+        const farPath = `M514 425 Q${n(fx + 53)} 496 ${n(fx)} ${n(fy - 8)}`;
+        leg.setAttribute('d', nearPath);
+        outline.setAttribute('d', nearPath);
+        far.setAttribute('d', farPath);
+        farLight.setAttribute('d', farPath);
+        nearFoot.setAttribute('transform', `translate(${n(x)} ${n(y - 8)})`);
+        farFoot.setAttribute('transform', `translate(${n(fx)} ${n(fy - 8)})`);
+        nearPedal.setAttribute('d', `M${n(x - 13)} ${n(y)}h31`);
+        farPedal.setAttribute('d', `M${n(fx - 13)} ${n(fy)}h29`);
+        crank.setAttribute('transform', `rotate(${n(phase * 180 / Math.PI)} 540 600)`);
+      }
+
+      function tick(time) {
+        if (previous !== null) phase += Math.min(time - previous, 60) / 2500 * Math.PI * 2;
+        previous = time;
+        draw();
+        frame = requestAnimationFrame(tick);
+      }
+
+      function sync() {
+        cancelAnimationFrame(frame);
+        previous = null;
+        draw();
+        if (!motion.matches && !document.hidden) frame = requestAnimationFrame(tick);
+      }
+      motion.addEventListener('change', sync);
+      document.addEventListener('visibilitychange', sync);
+      sync();
+    })();
+  </script>
+</body>
+</html>
